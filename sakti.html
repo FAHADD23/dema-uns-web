@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKTi DEMA UNS 2026 | Portal Aspirasi & Pengaduan</title>
+    
+    <!-- Memanggil Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Poppins', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        primary: '#7F011F', /* Wine Red */
+                        accent: '#F5EBD0',  /* Light Sand */
+                        dark: '#2d000a',    
+                        light: '#fdfbf7'    
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-dark font-sans relative">
+
+<!-- NAVBAR DEMA UNS -->
+    <div id="navbar" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-auto transition-all duration-500 ease-in-out">
+        <nav class="bg-[#7F011F]/90 backdrop-blur-md border border-white/20 shadow-2xl rounded-full px-8 py-3.5 flex items-center gap-8 md:gap-10">
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-10 h-10 object-contain">
+            </a>
+
+            <div class="flex items-center space-x-6 md:space-x-8 font-bold text-sm md:text-base text-white">
+                <a href="index.html" class="hover:text-accent transition duration-300 pb-1">Beranda</a>
+                <a href="sakti.html" class="text-accent border-b-2 border-accent pb-1 font-bold">SAKTi</a>
+                <a href="aktivitas.html" class="hover:text-accent transition duration-300 pb-1">Aktivitas</a>
+                <a href="produk-hukum.html" class="hover:text-accent transition duration-300 pb-1">Produk Hukum</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ================= HERO SECTION SAKTI (SERAGAM DENGAN AKTIVITAS) ================= -->
+    <section class="relative min-h-[85vh] bg-[#1a0005] text-white flex items-center justify-center pt-36 pb-20 overflow-hidden">
+        
+        <!-- Ambient Light Background -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-primary/40 rounded-full blur-[140px]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(245,235,208,0.15)_1px,transparent_1px)] [background-size:32px_32px] opacity-40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            
+            <!-- Badge dengan Dot Indicator -->
+            <div class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 text-accent px-5 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wider uppercase mb-8 shadow-2xl">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent animate-ping"></span>
+                <span>Saluran Aspirasi & Keluhan Terintegrasi</span>
+            </div>
+
+            <!-- Judul Gradasi -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6">
+                Suarakan Aspirasimu <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent drop-shadow-sm">
+                    Bersama SAKTi
+                </span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-base sm:text-lg md:text-xl text-gray-200/90 max-w-3xl leading-relaxed mb-8 font-light">
+                Portal resmi pengaduan dan pengawalan isu mahasiswa Universitas Sebelas Maret. Aman, transparan, dan dikawal langsung oleh DEMA UNS 2026.
+            </p>
+
+            <!-- Tombol Utama CTA -->
+            <div class="mb-12">
+                <a href="form-sakti.html" class="inline-flex items-center justify-center gap-3 bg-accent text-primary font-extrabold px-8 py-4 rounded-2xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(245,235,208,0.35)] text-base">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                    <span>Isi Formulir Laporan Sekarang</span>
+                </a>
+            </div>
+
+            <!-- 3 Kartu Poin Keunggulan (Menyeragamkan Tampilan Bawah) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-3xl pt-8 border-t border-white/10">
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-accent/40 transition">
+                    <p class="text-accent font-bold text-base">Rahasia & Aman</p>
+                    <p class="text-xs text-gray-300 mt-0.5">Identitas Pelapor Terjaga</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-accent/40 transition">
+                    <p class="text-accent font-bold text-base">Real-time Update</p>
+                    <p class="text-xs text-gray-300 mt-0.5">Status Pengawalan Isu</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-accent/40 transition">
+                    <p class="text-accent font-bold text-base">Dikawal Langsung</p>
+                    <p class="text-xs text-gray-300 mt-0.5">Komisi II DEMA UNS</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ALUR PENGAWALAN -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-3">Bagaimana Laporanmu Diproses?</h2>
+                <div class="w-20 h-1 bg-accent mx-auto rounded"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch relative">
+                <!-- Langkah 1 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-100 relative shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-primary text-accent font-bold text-lg rounded-xl flex items-center justify-center mb-4 shadow">1</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Pengisian Formulir</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Mahasiswa mengisi formulir online di portal SAKTi secara lengkap dan melampirkan bukti pendukung.</p>
+                    </div>
+                </div>
+                <!-- Langkah 2 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-100 relative shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-primary text-accent font-bold text-lg rounded-xl flex items-center justify-center mb-4 shadow">2</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Verifikasi Admin</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Tim admin/Komisi II memeriksa keabsahan data, kelengkapan berkas, serta mengklasifikasikan kategori laporan.</p>
+                    </div>
+                </div>
+                <!-- Langkah 3 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-100 relative shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-primary text-accent font-bold text-lg rounded-xl flex items-center justify-center mb-4 shadow">3</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Tindak Lanjut</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">DEMA UNS merumuskan kajian dan mengawal laporan melalui audiensi langsung dengan pihak Rektorat atau dinas terkait.</p>
+                    </div>
+                </div>
+                <!-- Langkah 4 -->
+                <div class="bg-light p-6 rounded-2xl border border-gray-100 relative shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-primary text-accent font-bold text-lg rounded-xl flex items-center justify-center mb-4 shadow">4</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Penjelasan & Hasil</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Hasil advokasi dan penjelasan penyelesaian masalah disampaikan kembali secara transparan kepada pelapor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DASHBOARD & TABEL TRANSPARANSI -->
+    <section class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Judul Section -->
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-primary mb-2">Transparansi Laporan SAKTi</h2>
+                <div class="w-20 h-1 bg-accent rounded mb-3"></div>
+                <p class="text-gray-600 text-sm">Pantau statistik ringkas dan status pengawalan isu mahasiswa secara terbuka.</p>
+            </div>
+
+            <!-- DASHBOARD STATISTIK SAKTI (Sejajar dengan Tabel) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Kotak 1: Total Laporan -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-5xl font-black text-primary mb-2 font-mono tracking-tight" id="stat-total">0</h3>
+                    <p class="text-sm text-gray-600 font-bold tracking-wide uppercase">Total Laporan Masuk</p>
+                </div>
+
+                <!-- Kotak 2: Sedang Diproses -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-5xl font-black text-amber-600 mb-2 font-mono tracking-tight" id="stat-proses">0</h3>
+                    <p class="text-sm text-gray-600 font-bold tracking-wide uppercase">Sedang Diproses</p>
+                </div>
+
+                <!-- Kotak 3: Laporan Selesai -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-xl hover:border-emerald-200 transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-5xl font-black text-emerald-600 mb-2 font-mono tracking-tight" id="stat-selesai">0</h3>
+                    <p class="text-sm text-gray-600 font-bold tracking-wide uppercase">Laporan Selesai</p>
+                </div>
+
+                <!-- Kotak 4: Persentase -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-5xl font-black text-primary mb-2 font-mono tracking-tight"><span id="stat-persen">0</span>%</h3>
+                    <p class="text-sm text-gray-600 font-bold tracking-wide uppercase">Tingkat Penyelesaian</p>
+                </div>
+            </div>
+
+            <!-- Bar Pencarian & Filter -->
+            <div class="mb-6 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+                <div class="relative w-full sm:max-w-xs">
+                    <input type="text" id="input-search" placeholder="Cari ID / Judul Laporan..." class="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-accent shadow-sm">
+                    <svg class="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <div class="w-full sm:w-auto">
+                    <select id="select-status" class="w-full sm:w-auto px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-accent shadow-sm text-gray-600 font-medium cursor-pointer">
+                        <option value="semua">Semua Status</option>
+                        <option value="Selesai">Selesai</option>
+                        <option value="Proses Audiensi">Proses Audiensi</option>
+                        <option value="Verifikasi Admin">Verifikasi Admin</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tabel Transparansi -->
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden w-full">
+                <div class="overflow-x-auto w-full">
+                    <table class="w-full text-left border-collapse text-sm min-w-[800px]">
+                        <thead>
+                            <tr class="bg-primary text-white font-semibold uppercase tracking-wider text-xs border-b border-gray-200">
+                                <th class="p-4 pl-6 w-[15%]">ID Laporan</th>
+                                <th class="p-4 w-[12%]">Tanggal</th>
+                                <th class="p-4 w-[18%]">Kategori</th>
+                                <th class="p-4 w-[30%]">Judul / Pokok Masalah</th>
+                                <th class="p-4 w-[15%]">Status Pengawalan</th>
+                                <th class="p-4 pr-6 w-[10%] text-center">Tindak Lanjut</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabel-laporan" class="divide-y divide-gray-100 font-medium text-gray-700 bg-white">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-gray-50 px-6 py-4 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-500">
+                    <p id="info-jumlah">Memuat data...</p>
+                    <p class="font-semibold text-primary">Diperbarui secara real-time oleh Komisi II DEMA UNS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL POP-UP DETAIL LAPORAN -->
+    <div id="modal-detail" class="fixed inset-0 z-[100] hidden items-center justify-center">
+        <div class="absolute inset-0 bg-dark/60 backdrop-blur-sm" onclick="tutupModal()"></div>
+        <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-2xl mx-4 overflow-hidden transform transition-all flex flex-col max-h-[90vh]">
+            <div class="bg-primary px-6 py-4 flex justify-between items-center border-b border-primary/20 shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-mono tracking-wide" id="modal-token">#SKT-XXXX</h3>
+                </div>
+                <button onclick="tutupModal()" class="text-white/70 hover:text-white bg-white/5 hover:bg-white/20 p-2 rounded-full transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-6 md:p-8 space-y-6 overflow-y-auto">
+                <div class="flex flex-wrap gap-3">
+                    <span id="modal-status" class="px-3.5 py-1.5 rounded-full text-xs font-bold border">Status</span>
+                    <span id="modal-kategori" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-gray-100 text-gray-700 border border-gray-200">Kategori</span>
+                </div>
+                <div>
+                    <h4 class="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1.5">Pokok Masalah</h4>
+                    <p id="modal-judul" class="text-dark font-extrabold text-xl leading-snug">Judul Laporan</p>
+                </div>
+                <div>
+                    <h4 class="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1.5">Detail / Kronologi Laporan</h4>
+                    <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                        <p id="modal-detail-teks" class="text-sm md:text-base text-gray-700 leading-relaxed whitespace-pre-wrap">Isi detail laporan mahasiswa...</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <h4 class="text-xs text-primary font-bold uppercase tracking-wider mb-1.5 flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Tindak Lanjut / Penjelasan DEMA UNS
+                    </h4>
+                    <div class="bg-blue-50/50 p-5 rounded-2xl border border-blue-100/50 shadow-inner">
+                        <p id="modal-penjelasan" class="text-sm md:text-base text-primary font-medium leading-relaxed whitespace-pre-wrap">Belum ada tanggapan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end shrink-0">
+                <button onclick="tutupModal()" class="px-8 py-2.5 bg-dark text-white font-bold rounded-xl hover:bg-primary transition shadow-md">Tutup Detail</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-primary text-white pt-16 pb-8 border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-10 h-10 object-contain">
+                        <h3 class="text-xl font-bold tracking-wide">DEMA UNS</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Parlemen Berdikari 2026. Wadah aspirasi utama bagi seluruh mahasiswa Universitas Sebelas Maret untuk menjaga tata kelola kampus yang transparan.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="index.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Beranda</a></li>
+                        <li><a href="sakti.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> SAKTi</a></li>
+                        <li><a href="aktivitas.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Aktivitas</a></li>
+                        <li><a href="produk-hukum.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Produk Hukum</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Sekretariat</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        <strong>Gedung Graha Ormawa 1</strong><br>
+                        Lantai 2, Ruang DEMA UNS<br>
+                        Jl. Ir. Sutami No.36A, Kentingan, Jebres,<br>
+                        Surakarta, Jawa Tengah 57126
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Media Sosial</h4>
+                    <p class="text-sm text-gray-300 mb-4">Ikuti perkembangan regulasi dan aktivitas kami.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition duration-300" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="mailto:dema@uns.ac.id" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition duration-300" aria-label="Email">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FETCH DATA, FILTER, ANIMASI, & POPUP -->
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwTKFWCLBa4DEetFZMvJoId3FhVSZfBRXbpHjqrdPSQls3LZL4Y1MxgPfE8ndSjm_hn/exec";
+        
+        const tabelBody = document.getElementById('tabel-laporan');
+        const inputSearch = document.getElementById('input-search');
+        const selectStatus = document.getElementById('select-status');
+        const infoJumlah = document.getElementById('info-jumlah');
+        let globalDataLaporan = [];
+
+        function getWarnaJenis(jenis) {
+            if (jenis === 'Aspirasi') return 'bg-blue-100 text-primary border border-blue-200';
+            if (jenis === 'Pengaduan') return 'bg-rose-100 text-rose-700 border border-rose-200';
+            if (jenis === 'Kritik & Saran') return 'bg-purple-100 text-purple-700 border border-purple-200';
+            return 'bg-gray-100 text-gray-700 border border-gray-200';
+        }
+
+        function bukaModal(index) {
+            const item = globalDataLaporan[index];
+            if(!item) return;
+
+            document.getElementById('modal-token').innerText = item.token;
+            document.getElementById('modal-judul').innerText = item.judul;
+            document.getElementById('modal-detail-teks').innerText = item.detail;
+            document.getElementById('modal-penjelasan').innerText = item.penjelasan || "Belum ada tanggapan / penjelasan dari admin.";
+
+            const kategoriBadge = document.getElementById('modal-kategori');
+            kategoriBadge.innerText = item.jenis;
+            
+            const statusBadge = document.getElementById('modal-status');
+            statusBadge.innerText = item.status;
+            if(item.status === 'Selesai') {
+                statusBadge.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 border border-emerald-200';
+            } else if(item.status.includes('Proses') || item.status.includes('Audiensi')) {
+                statusBadge.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-700 border border-amber-200 animate-pulse';
+            } else {
+                statusBadge.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-100 text-blue-700 border border-blue-200';
+            }
+
+            const modal = document.getElementById('modal-detail');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function tutupModal() {
+            const modal = document.getElementById('modal-detail');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function filterTabel() {
+            const kataKunci = inputSearch.value.toLowerCase();
+            const statusDipilih = selectStatus.value;
+            const barisTabel = tabelBody.getElementsByTagName('tr');
+            let jumlahTampil = 0;
+
+            for (let i = 0; i < barisTabel.length; i++) {
+                const baris = barisTabel[i];
+                if(baris.cells.length < 6) continue;
+
+                const idLaporan = baris.cells[0].textContent.toLowerCase();
+                const judulLaporan = baris.cells[3].textContent.toLowerCase();
+                const statusLaporan = baris.cells[4].textContent.trim();
+
+                const cocokSearch = idLaporan.includes(kataKunci) || judulLaporan.includes(kataKunci);
+                const cocokStatus = (statusDipilih === 'semua') || statusLaporan.includes(statusDipilih);
+
+                if (cocokSearch && cocokStatus) {
+                    baris.style.display = '';
+                    jumlahTampil++;
+                } else {
+                    baris.style.display = 'none';
+                }
+            }
+            infoJumlah.innerText = `Menampilkan ${jumlahTampil} laporan terdata`;
+        }
+
+        // Fungsi Animasi Angka Berjalan (Counter)
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            if (!obj) return;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const easeProgress = progress * (2 - progress); 
+                obj.innerHTML = Math.floor(easeProgress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    obj.innerHTML = end;
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function loadData() {
+            tabelBody.innerHTML = '<tr><td colspan="6" class="px-6 py-12 text-center text-gray-500 font-semibold animate-pulse">Menghubungkan ke server DEMA UNS...</td></tr>';
+
+            fetch(SCRIPT_URL)
+                .then(response => response.json())
+                .then(data => {
+                    tabelBody.innerHTML = ''; 
+                    data.reverse();
+                    globalDataLaporan = data;
+
+                    if (data.length === 0) {
+                        tabelBody.innerHTML = '<tr><td colspan="6" class="px-6 py-12 text-center text-gray-500 font-semibold">Belum ada laporan yang masuk saat ini.</td></tr>';
+                        infoJumlah.innerText = "0 laporan";
+                        return;
+                    }
+
+                    // --- PERHITUNGAN STATISTIK OTOMATIS (Tanpa Duplikasi) ---
+                    let totalLaporan = data.length;
+                    let jumlahSelesai = 0;
+                    let jumlahProses = 0;
+
+                    data.forEach(item => {
+                        const status = item.status || '';
+                        if(status === 'Selesai') {
+                            jumlahSelesai++;
+                        } else {
+                            jumlahProses++;
+                        }
+                    });
+
+                    let persenSelesai = totalLaporan > 0 ? Math.round((jumlahSelesai / totalLaporan) * 100) : 0;
+
+                    // Jalankan animasi angka berjalan (1.2 detik)
+                    animateValue("stat-total", 0, totalLaporan, 1200);
+                    animateValue("stat-proses", 0, jumlahProses, 1200);
+                    animateValue("stat-selesai", 0, jumlahSelesai, 1200);
+                    animateValue("stat-persen", 0, persenSelesai, 1200);
+
+                    // --- ISI TABEL LAPORAN ---
+                    data.forEach((item, index) => {
+                        const tgl = new Date(item.tanggal);
+                        const formatTanggal = isNaN(tgl) ? item.tanggal : tgl.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+                        
+                        const statusText = item.status || 'Verifikasi Admin';
+                        let statusColor = 'bg-blue-100 text-blue-700';
+                        let dotColor = 'bg-blue-500';
+
+                        if(statusText === 'Selesai') {
+                            statusColor = 'bg-emerald-100 text-emerald-700';
+                            dotColor = 'bg-emerald-500';
+                        } else if(statusText.includes('Proses') || statusText.includes('Audiensi')) {
+                            statusColor = 'bg-amber-100 text-amber-700';
+                            dotColor = 'bg-amber-500 animate-pulse';
+                        }
+
+                        const rowHTML = `
+                            <tr class="hover:bg-blue-50/80 transition duration-150 cursor-pointer group" onclick="bukaModal(${index})">
+                                <td class="p-4 pl-6 font-bold text-primary font-mono text-sm whitespace-nowrap group-hover:text-accent transition">${item.token || '-'}</td>
+                                <td class="p-4 text-gray-500 text-xs whitespace-nowrap">${formatTanggal}</td>
+                                <td class="p-4 whitespace-nowrap">
+                                    <span class="${getWarnaJenis(item.jenis)} text-xs px-2.5 py-1 rounded-md font-semibold inline-block">
+                                        ${item.jenis || '-'}
+                                    </span>
+                                </td>
+                                <td class="p-4 font-semibold text-dark leading-relaxed text-sm max-w-sm truncate" title="${item.judul}">${item.judul || '-'}</td>
+                                <td class="p-4 whitespace-nowrap">
+                                    <span class="${statusColor} text-xs px-3 py-1 rounded-full font-bold inline-flex items-center gap-1.5">
+                                        <span class="w-1.5 h-1.5 ${dotColor} rounded-full"></span> ${statusText}
+                                    </span>
+                                </td>
+                                <td class="p-4 pr-6 text-center text-xs text-gray-400 font-semibold flex justify-center items-center gap-1 group-hover:text-primary transition">
+                                    Lihat Detail
+                                    <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                </td>
+                            </tr>
+                        `;
+                        tabelBody.insertAdjacentHTML('beforeend', rowHTML);
+                    });
+
+                    filterTabel();
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    tabelBody.innerHTML = '<tr><td colspan="6" class="px-6 py-12 text-center text-red-500 font-semibold">Gagal memuat data dari server. Silakan muat ulang halaman.</td></tr>';
+                    infoJumlah.innerText = "Koneksi terputus";
+                });
+        }
+
+        inputSearch.addEventListener('keyup', filterTabel);
+        selectStatus.addEventListener('change', filterTabel);
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+    <script>
+        // Efek Scroll Navbar Otomatis
+        let prevScrollpos = window.pageYOffset;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function () {
+            const current = window.pageYOffset;
+            if (!navbar) return;
+
+            if (prevScrollpos > current) {
+                navbar.classList.remove('-translate-y-28', 'opacity-0');
+            } else if (current > 80) {
+                navbar.classList.add('-translate-y-28', 'opacity-0');
+            }
+            prevScrollpos = current;
+        });
+    </script>
+</body>
+</html>

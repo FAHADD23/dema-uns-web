@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Hukum | DEMA UNS 2026</title>
+
+    <!-- Memanggil Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Poppins', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        primary: '#7F011F', /* Wine Red */
+                        accent: '#F5EBD0',  /* Light Sand */
+                        dark: '#2d000a',    /* Dark Wine */
+                        light: '#fdfbf7'    /* Soft Cream */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-dark font-sans flex flex-col min-h-screen justify-between relative">
+
+    <!-- NAVBAR DEMA UNS -->
+    <div id="navbar" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-auto transition-all duration-500 ease-in-out">
+        <nav class="bg-[#7F011F]/90 backdrop-blur-md border border-white/20 shadow-2xl rounded-full px-8 py-3.5 flex items-center justify-between gap-8 md:gap-10">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-10 h-10 object-contain">
+            </a>
+
+            <!-- Menu Links Desktop -->
+            <div class="hidden md:flex items-center space-x-6 md:space-x-8 font-bold text-sm md:text-base text-white">
+                <a href="index.html" class="hover:text-accent transition duration-300 pb-1">Beranda</a>
+                <a href="sakti.html" class="hover:text-accent transition duration-300 pb-1">SAKTi</a>
+                <a href="aktivitas.html" class="hover:text-accent transition duration-300 pb-1">Aktivitas</a>
+                <a href="produk-hukum.html" class="text-accent border-b-2 border-accent pb-1 font-bold">Produk Hukum</a>
+            </div>
+
+            <!-- Tombol Hamburger Mobile -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-accent p-1 focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3 bg-primary/95 backdrop-blur-2xl border border-white/20 rounded-3xl p-5 shadow-2xl flex flex-col gap-3 text-white text-center font-medium">
+            <a href="index.html" class="py-2.5 rounded-xl hover:bg-white/10 text-white/90">Beranda</a>
+            <a href="sakti.html" class="py-2.5 rounded-xl hover:bg-white/10 text-white/90">SAKTi</a>
+            <a href="aktivitas.html" class="py-2.5 rounded-xl hover:bg-white/10 text-white/90">Aktivitas</a>
+            <a href="produk-hukum.html" class="py-2.5 rounded-xl bg-white/20 text-accent font-bold">Produk Hukum</a>
+        </div>
+    </div>
+
+    <!-- ================= HERO SECTION PRODUK HUKUM ================= -->
+    <section class="relative bg-[#1a0005] text-white pt-36 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-primary/40 rounded-full blur-[140px]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(245,235,208,0.15)_1px,transparent_1px)] [background-size:32px_32px] opacity-40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            
+            <div class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 text-accent px-5 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wider uppercase mb-8 shadow-2xl">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent animate-ping"></span>
+                <span>Komisi 1 Legislasi DEMA UNS</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6">
+                Produk Hukum & <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent drop-shadow-sm">
+                    Regulasi KBM UNS
+                </span>
+            </h1>
+
+            <p class="text-base sm:text-lg md:text-xl text-gray-200/90 max-w-3xl leading-relaxed font-light">
+                Produk Hukum merupakan instrumen regulasi resmi yang berfungsi sebagai landasan yuridis, pedoman tata kelola, dan standarisasi operasional bagi seluruh organisasi kemahasiswaan di lingkungan Universitas Sebelas Maret.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-3xl pt-10 border-t border-white/10 mt-10">
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <p class="text-accent font-bold text-base">Kepastian Hukum</p>
+                    <p class="text-xs text-gray-300 mt-0.5">Landasan Juridis Organisasi</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <p class="text-accent font-bold text-base">Transparan</p>
+                    <p class="text-xs text-gray-300 mt-0.5">Terbuka Untuk Mahasiswa</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <p class="text-accent font-bold text-base">Akuntabel</p>
+                    <p class="text-xs text-gray-300 mt-0.5">Uji Publik & Harmonisasi</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= KONTEN UTAMA (DAFTAR DOKUMEN - UNDER MAINTENANCE) ================= -->
+    <main class="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        
+        <!-- Header Ringkas -->
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-primary">Daftar Dokumen</h2>
+                <p class="text-xs md:text-sm text-gray-500 mt-1">Produk Hukum & Peraturan DEMA UNS 2026</p>
+            </div>
+            <span class="text-xs font-semibold bg-gray-100 text-gray-500 px-3.5 py-1.5 rounded-full border border-gray-200">
+                0 Dokumen Diterbitkan
+            </span>
+        </div>
+
+        <!-- Tampilan Under Maintenance -->
+        <div class="bg-white rounded-3xl p-10 md:p-16 text-center border border-gray-200 shadow-sm">
+            <div class="w-16 h-16 bg-accent/40 text-primary rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <!-- Icon Wrench / Tools -->
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                </svg>
+            </div>
+
+            <span class="bg-primary/10 text-primary text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3">
+                Pemeliharaan Sistem
+            </span>
+
+            <h3 class="text-2xl md:text-3xl font-black text-dark mb-2">Under Maintenance</h3>
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed max-w-lg mx-auto mb-6">
+                Bagian dokumen dan arsip produk hukum sedang dalam tahap pemeliharaan serta pembaharuan basis data oleh Komisi 1 DEMA UNS.
+            </p>
+
+            <div class="inline-flex items-center gap-2 text-xs font-medium text-gray-500 bg-light px-4 py-2.5 rounded-xl border border-gray-200">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                <span>Dokumen akan segera diunggah secara berkala</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-primary text-white pt-16 pb-8 border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-10 h-10 object-contain">
+                        <h3 class="text-xl font-bold tracking-wide">DEMA UNS</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Parlemen Berdikari 2026. Wadah aspirasi utama bagi seluruh mahasiswa Universitas Sebelas Maret untuk menjaga tata kelola kampus yang transparan.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="index.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Beranda</a></li>
+                        <li><a href="sakti.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> SAKTi</a></li>
+                        <li><a href="aktivitas.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Aktivitas</a></li>
+                        <li><a href="produk-hukum.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Produk Hukum</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Sekretariat</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        <strong>Gedung Graha Ormawa 1</strong><br>
+                        Lantai 2, Ruang DEMA UNS<br>
+                        Jl. Ir. Sutami No.36A, Kentingan, Jebres,<br>
+                        Surakarta, Jawa Tengah 57126
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Media Sosial</h4>
+                    <p class="text-sm text-gray-300 mb-4">Ikuti perkembangan regulasi dan aktivitas kami.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/dema11maret/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition duration-300" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="mailto:dema@uns.ac.id" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition duration-300" aria-label="Email">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2026 DEMA UNS. Hak Cipta Dilindungi.</p>
+                <p class="mt-2 md:mt-0 font-medium">Dirancang untuk Parlemen Berdikari</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        let prevScrollpos = window.pageYOffset;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function () {
+            const current = window.pageYOffset;
+            if (!navbar) return;
+
+            if (prevScrollpos > current) {
+                navbar.classList.remove('-translate-y-28', 'opacity-0');
+            } else if (current > 80) {
+                navbar.classList.add('-translate-y-28', 'opacity-0');
+            }
+            prevScrollpos = current;
+        });
+    </script>
+</body>
+</html>

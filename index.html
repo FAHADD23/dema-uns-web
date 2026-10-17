@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMA UNS 2026 | Parlemen Berdikari</title>
+
+    <!-- Memanggil Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Style Khusus Splash Screen -->
+    <style>
+        .font-bugate {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+    </style>
+
+    <!-- Tailwind CSS Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Poppins', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        primary: '#7F011F', /* Wine Red */
+                        accent: '#F5EBD0',  /* Light Sand */
+                        dark: '#2d000a',    /* Dark Wine */
+                        light: '#fdfbf7'    /* Soft Cream */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-dark font-sans relative">
+
+    <!-- SPLASH SCREEN (Full Screen, Menghilang Otomatis) -->
+    <div id="splash-screen" class="fixed inset-0 z-[9999] bg-primary flex flex-col items-center justify-center transition-opacity duration-1000 ease-in-out">
+        <h1 class="font-bugate text-6xl md:text-8xl text-accent text-center leading-tight mb-4 tracking-normal drop-shadow-2xl select-none">
+            PARLEMEN <br/> BERDIKARI
+        </h1>
+        <p class="text-white font-medium tracking-[0.2em] text-xs md:text-sm text-center uppercase opacity-90 px-4">
+            Dewan Mahasiswa Universitas Sebelas Maret 2026
+        </p>
+    </div>
+
+    <!-- NAVBAR DEMA UNS -->
+    <div id="navbar" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-auto transition-all duration-500 ease-in-out">
+        <nav class="bg-[#7F011F]/90 backdrop-blur-md border border-white/20 shadow-2xl rounded-full px-8 py-3.5 flex items-center justify-between gap-8 md:gap-10">
+            <!-- Logo Saja -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-10 h-10 object-contain">
+            </a>
+
+            <!-- Menu Links Desktop -->
+            <div class="hidden md:flex items-center space-x-6 md:space-x-8 font-bold text-sm md:text-base text-white">
+                <a href="index.html" class="text-accent border-b-2 border-accent pb-1 font-bold">Beranda</a>
+                <a href="sakti.html" class="hover:text-accent transition duration-300 pb-1">SAKTi</a>
+                <a href="aktivitas.html" class="hover:text-accent transition duration-300 pb-1">Aktivitas</a>
+                <a href="produk-hukum.html" class="hover:text-accent transition duration-300 pb-1">Produk Hukum</a>
+            </div>
+
+            <!-- Tombol Hamburger Mobile -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-accent p-1 focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3 bg-primary/95 backdrop-blur-2xl border border-white/20 rounded-3xl p-5 shadow-2xl flex flex-col gap-3 text-white text-center font-medium">
+            <a href="index.html" class="py-2.5 rounded-xl bg-white/20 text-accent font-bold">Beranda</a>
+            <a href="sakti.html" class="py-2.5 rounded-xl hover:bg-white/10 text-white/90">SAKTi</a>
+            <a href="aktivitas.html" class="py-2.5 rounded-xl hover:bg-white/10 text-white/90">Aktivitas</a>
+            <a href="produk-hukum.html" class="py-2.5 rounded-xl hover:bg-white/10 text-white/90">Produk Hukum</a>
+        </div>
+    </div>
+
+    <!-- ================= HERO SECTION MODERN (LIGHTING & DEPTH) ================= -->
+    <section class="relative min-h-screen bg-[#1a0005] text-white flex items-center justify-center pt-36 pb-20 overflow-hidden">
+        
+        <!-- LATAR BELAKANG AMBIENT LIGHT & GRID TEXTURE -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <img src="assets/bg-rektorat.jpg" alt="Rektorat UNS" class="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity filter contrast-125 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#7F011F]/60 via-[#2d000a]/90 to-[#120004]"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-primary/50 rounded-full blur-[140px]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(245,235,208,0.15)_1px,transparent_1px)] [background-size:32px_32px] opacity-40"></div>
+        </div>
+
+        <!-- KONTEN UTAMA HERO SECTION -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            
+            <div class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 text-accent px-5 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wider uppercase mb-8 shadow-2xl">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent animate-ping"></span>
+                <span>Parlemen Berdikari 2026</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6">
+                Dewan Mahasiswa <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent drop-shadow-sm">
+                    Universitas Sebelas Maret
+                </span>
+            </h1>
+
+            <p class="text-base sm:text-lg md:text-xl text-gray-200/90 max-w-3xl leading-relaxed mb-10 font-light">
+                Lembaga tinggi kemahasiswaan tingkat universitas yang menjalankan fungsi legislasi dan pengawasan demi terwujudnya tata kelola kampus yang transparan dan inklusif.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                <a href="#visi-misi" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent text-primary font-extrabold px-8 py-4 rounded-2xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(245,235,208,0.35)] text-base">
+                    <span>Kenali Kami</span>
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+
+                <a href="produk-hukum.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/25 text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 text-base shadow-lg">
+                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <span>Lihat Produk Hukum</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16 pt-10 border-t border-white/10 w-full max-w-3xl">
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-accent/40 transition">
+                    <p class="text-accent text-xl font-black font-mono">100%</p>
+                    <p class="text-xs text-gray-300 font-medium mt-0.5">Transparansi SAKTi</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-accent/40 transition">
+                    <p class="text-accent text-xl font-black font-mono">3 Fungsi</p>
+                    <p class="text-xs text-gray-300 font-medium mt-0.5">Legislasi & Pengawasan</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-accent/40 transition col-span-2 md:col-span-1">
+                    <p class="text-accent text-xl font-black font-mono">14 Fakultas</p>
+                    <p class="text-xs text-gray-300 font-medium mt-0.5">Pengawalan Mahasiswa</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= END HERO SECTION ================= -->
+
+    <!-- ================= VISI & MISI DEMA UNS ================= -->
+    <section id="visi-misi" class="py-24 bg-light relative overflow-hidden">
+        
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- BAGIAN VISI -->
+            <div class="text-center max-w-4xl mx-auto mb-24">
+                <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest mb-6">
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    Arah Gerak Parlemen Berdikari 2026
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-5xl md:text-7xl font-black text-primary tracking-tight uppercase inline-block relative">
+                        VISI
+                        <span class="block h-2 bg-accent rounded-full mt-2 w-full"></span>
+                    </h2>
+                </div>
+
+                <h3 class="text-2xl md:text-4xl font-extrabold text-dark leading-relaxed md:leading-snug mt-6">
+                    Mewujudkan DEMA UNS sebagai 
+                    <span class="bg-primary text-accent px-4 py-1.5 rounded-2xl inline-block my-1 shadow-lg transform -rotate-1 font-black">
+                        Poros Pergerakan
+                    </span> 
+                    Mahasiswa yang Progresif, Inklusif, dan 
+                    <span class="text-primary underline decoration-accent decoration-wavy decoration-4 underline-offset-8 font-black">
+                        Berdikari
+                    </span> 
+                    dalam Mengawal Tata Kelola Kampus.
+                </h3>
+            </div>
+
+            <!-- BAGIAN MISI -->
+            <div>
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl md:text-7xl font-black text-primary tracking-tight uppercase inline-block relative">
+                        MISI
+                        <span class="block h-2 bg-accent rounded-full mt-2 w-full"></span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl border border-gray-200/80 hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="w-14 h-14 bg-primary text-accent font-black text-xl rounded-2xl flex items-center justify-center shadow-md group-hover:bg-accent group-hover:text-primary transition duration-300 shrink-0">01</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-dark group-hover:text-primary transition">Sinergi Kolaboratif</h4>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base">Membangun hubungan yang harmonis dan kolaboratif antar elemen mahasiswa, birokrasi kampus, dan masyarakat luas.</p>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl border border-gray-200/80 hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="w-14 h-14 bg-primary text-accent font-black text-xl rounded-2xl flex items-center justify-center shadow-md group-hover:bg-accent group-hover:text-primary transition duration-300 shrink-0">02</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-dark group-hover:text-primary transition">Advokasi Progresif</h4>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base">Mengawal kebijakan kampus secara kritis, strategis, dan solutif demi terwujudnya kesejahteraan seluruh mahasiswa.</p>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl border border-gray-200/80 hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="w-14 h-14 bg-primary text-accent font-black text-xl rounded-2xl flex items-center justify-center shadow-md group-hover:bg-accent group-hover:text-primary transition duration-300 shrink-0">03</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-dark group-hover:text-primary transition">Pemberdayaan Inklusif</h4>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base">Mewujudkan ruang aman dan memfasilitasi pengembangan potensi mahasiswa dari berbagai disiplin ilmu dan latar belakang.</p>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl border border-gray-200/80 hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="w-14 h-14 bg-primary text-accent font-black text-xl rounded-2xl flex items-center justify-center shadow-md group-hover:bg-accent group-hover:text-primary transition duration-300 shrink-0">04</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-dark group-hover:text-primary transition">Kemandirian Finansial</h4>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base">Mengembangkan sektor kewirausahaan organisasi yang kreatif dan inovatif untuk menunjang kemandirian program kerja.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SAMBUTAN KETUA SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="relative w-64 h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-light group">
+                        <div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition duration-300 z-10"></div>
+                        <img src="masnep.png" alt="Ketua DEMA UNS" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary to-transparent p-4 z-20">
+                            <h4 class="text-white font-bold text-lg">Fahad Daffa Athaillah</h4>
+                            <p class="text-accent text-sm">Ketua DEMA UNS 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-bold text-primary mb-2">Sapa Parlemen</h2>
+                    <div class="w-16 h-1 bg-accent rounded mb-6"></div>
+                    <p class="text-dark leading-relaxed mb-4 text-justify">
+                        "Hidup Mahasiswa! Selamat datang di portal resmi Dewan Mahasiswa Universitas Sebelas Maret 2026. Sebagai Parlemen Berdikari, kami hadir tidak hanya sebagai pengawas, namun sebagai mitra kritis dan wadah esensial bagi setiap gagasan yang lahir dari mahasiswa UNS."
+                    </p>
+                    <p class="text-dark leading-relaxed mb-8 text-justify">
+                        Melalui platform digital ini, kami berkomitmen menghadirkan transparansi produk hukum, keterbukaan informasi publik, serta kemudahan akses penjaringan aspirasi. Mari bersama-sama mengawal cita-cita kampus tercinta kita.
+                    </p>
+                    <img src="https://via.placeholder.com/150x50/ffffff/2b4c81?text=Tanda+Tangan" alt="Tanda Tangan" class="h-12 opacity-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= BANNER CTA ASPIRASI ================= -->
+    <section class="py-10 bg-primary text-white my-12 mx-4 sm:mx-6 lg:mx-8 rounded-3xl shadow-xl overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Punya Aspirasi atau Keluhan?</h2>
+                <p class="text-gray-200 text-sm md:text-base leading-relaxed">Sampaikan keluhan terkait fasilitas, UKT, atau kebijakan kampus. Kami siap mengawal!</p>
+            </div>
+
+            <a href="form-sakti.html" class="inline-flex items-center gap-3 bg-accent text-primary font-extrabold px-6 py-3.5 rounded-2xl hover:bg-yellow-300 transition duration-300 transform hover:-translate-y-0.5 shadow-md shrink-0 cursor-pointer">
+                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                <span>Kirim Aspirasi Sekarang</span>
+            </a>
+        </div>
+    </section>
+    <!-- ================= END BANNER CTA ================= -->
+
+    <!-- ================= SECTION AKTIVITAS & BERITA TERKINI (SLIDER CAROUSEL) ================= -->
+    <section class="py-20 bg-light relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs md:text-sm font-bold text-primary uppercase tracking-widest bg-primary/10 px-3.5 py-1.5 rounded-full inline-block mb-3">
+                        Kabar Terkini
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-black text-dark tracking-tight">
+                        Aktivitas & Pergerakan DEMA UNS
+                    </h2>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button onclick="scrollNewsCarousel(-1)" class="w-12 h-12 rounded-2xl bg-white border border-gray-200 text-primary shadow-md hover:bg-primary hover:text-white transition duration-300 flex items-center justify-center shrink-0 cursor-pointer" aria-label="Geser Kiri">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button onclick="scrollNewsCarousel(1)" class="w-12 h-12 rounded-2xl bg-white border border-gray-200 text-primary shadow-md hover:bg-primary hover:text-white transition duration-300 flex items-center justify-center shrink-0 cursor-pointer" aria-label="Geser Kanan">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="newsCarousel" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                
+                <!-- Kartu 1 -->
+                <div class="snap-start shrink-0 w-[85%] sm:w-[380px] md:w-[400px] bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative h-56 overflow-hidden bg-dark">
+                        <img src="assets/berita-utama.webp" alt="Poster Berita Utama" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-accent text-xs font-extrabold px-3 py-1 rounded-full border border-accent/20">
+                            Komisi 1 Legislasi
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <p class="text-xs text-gray-400 font-semibold mb-2">26 September 2026</p>
+                            <h3 class="text-lg font-extrabold text-dark mb-3 group-hover:text-primary transition leading-snug line-clamp-2">
+                                Sidang Paripurna II DEMA UNS 2026
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                                Sidang Paripurna II Dewan Mahasiswa Universitas Sebelas Maret telah terlaksana pada 26 September 2026 sebagai forum konstitusional untuk melanjutkan pembahasan serta menetapkan berbagai agenda strategis organisasi.
+                            </p>
+                        </div>
+                        <a href="https://www.instagram.com/p/DdyKaMPmJNg/?utm_source=ig_web_copy_link&dlrf=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between text-sm font-extrabold text-primary hover:text-accent bg-light hover:bg-primary px-4 py-3 rounded-xl transition duration-300 group/btn">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                Baca Selengkapnya
+                            </span>
+                            <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kartu 2 -->
+                <div class="snap-start shrink-0 w-[85%] sm:w-[380px] md:w-[400px] bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative h-56 overflow-hidden bg-dark">
+                        <img src="assets/pleno-tengah.jpg" alt="Aktivitas 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-accent text-xs font-bold px-3 py-1 rounded-full">
+                            Umum
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <p class="text-xs text-gray-400 font-semibold mb-2">12 September 2026</p>
+                            <h3 class="text-lg font-extrabold text-dark mb-3 group-hover:text-primary transition leading-snug line-clamp-2">
+                                Pleno Tengah DEMA UNS 2026
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                                dilaksanakan Pleno Tengah Dewan Mahasiswa Universitas Sebelas Maret sebagai forum evaluasi dan pembahasan perkembangan pelaksanaan program kerja selama periode kepengurusan berlangsung.
+                            </p>
+                        </div>
+                        <a href="https://www.instagram.com/p/DdiziItmKV2/?utm_source=ig_web_copy_link&psln=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between text-sm font-extrabold text-primary hover:text-accent bg-light hover:bg-primary px-4 py-3 rounded-xl transition duration-300 group/btn">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                Lihat di Instagram
+                            </span>
+                            <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kartu 3 -->
+                <div class="snap-start shrink-0 w-[85%] sm:w-[380px] md:w-[400px] bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative h-56 overflow-hidden bg-dark">
+                        <img src="assets/serap-aspirasi-fk.jpg" alt="Aktivitas 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-accent text-xs font-bold px-3 py-1 rounded-full">
+                            Komisi II Aspirasi
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <p class="text-xs text-gray-400 font-semibold mb-2">8 September 2026</p>
+                            <h3 class="text-lg font-extrabold text-dark mb-3 group-hover:text-primary transition leading-snug line-clamp-2">
+                                SERAP ASPIRASI FAKULTAS KEDOKTERAN UNS
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                                Dewan Mahasiswa (DEMA) UNS telah menyelenggarakan agenda Serap Aspirasi yang bertempat di RK 2 Lantai 1 Fakultas Kedokteran UNS, berkolaborasi dan berkoordinasi langsung dengan DEMA FK UNS.
+                            </p>
+                        </div>
+                        <a href="https://www.instagram.com/p/DdE6MZHk-wx/?utm_source=ig_web_copy_link&obrf=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between text-sm font-extrabold text-primary hover:text-accent bg-light hover:bg-primary px-4 py-3 rounded-xl transition duration-300 group/btn">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                Lihat di Instagram
+                            </span>
+                            <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kartu 4 -->
+                <div class="snap-start shrink-0 w-[85%] sm:w-[380px] md:w-[400px] bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative h-56 overflow-hidden bg-dark">
+                        <img src="assets/sarasehan.jpg" alt="Aktivitas 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-accent text-xs font-bold px-3 py-1 rounded-full">
+                            Komisi III Pengawasan
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <p class="text-xs text-gray-400 font-semibold mb-2">18 September 2026</p>
+                            <h3 class="text-lg font-extrabold text-dark mb-3 group-hover:text-primary transition leading-snug line-clamp-2">
+                                SERASEHAN DEMA UNS X BEM UNS 2026
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                                telah terlaksana kegiatan Sarasehan antara Dewan Mahasiswa Universitas Sebelas Maret dan Badan Eksekutif Mahasiswa Universitas Sebelas Maret. Kegiatan ini menjadi ruang dialog dan silaturahmi yang bertujuan untuk mempererat hubungan antarlembaga serta memperkuat sinergi dalam menjalankan fungsi dan peran masing-masing organisasi kemahasiswaan.
+                            </p>
+                        </div>
+                        <a href="https://www.instagram.com/p/Dab7kFeGH04/?utm_source=ig_web_copy_link&mdxt=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between text-sm font-extrabold text-primary hover:text-accent bg-light hover:bg-primary px-4 py-3 rounded-xl transition duration-300 group/btn">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                Lihat di Instagram
+                            </span>
+                            <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="aktivitas.html" class="inline-flex items-center gap-2 text-sm md:text-base font-extrabold text-primary hover:text-accent bg-white border border-primary/20 hover:bg-primary px-6 py-3 rounded-2xl shadow-sm transition duration-300">
+                    <span>Lihat Seluruh Aktivitas & Berita</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7-7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= END SECTION AKTIVITAS ================= -->
+
+<!-- ================= STRUKTUR ORGANISASI (SIMPEL & CLEAN) ================= -->
+    <section id="struktur" class="pt-20 pb-28 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Judul Section -->
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">
+                    Struktur Organisasi
+                </h2>
+                <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-4"></div>
+                <p class="text-gray-600 text-sm md:text-base">
+                    Struktur pimpinan, komisi, dan biro Dewan Mahasiswa Universitas Sebelas Maret 2026.
+                </p>
+            </div>
+
+            <!-- Pimpinan Utama (Ketua & Sekjen) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+                <!-- Ketua Umum -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-primary/40 transition">
+                    <span class="inline-block bg-primary text-accent text-xs font-bold px-3 py-1 rounded-full mb-3">
+                        Pimpinan Utama
+                    </span>
+                    <h3 class="text-xl font-bold text-dark mb-2">Ketua Umum</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Penanggung jawab utama seluruh fungsi legislasi, pengawasan, dan arah gerak organisasi.
+                    </p>
+                </div>
+
+                <!-- Sekjen -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-primary/40 transition">
+                    <span class="inline-block bg-accent text-primary text-xs font-bold px-3 py-1 rounded-full mb-3">
+                        Sekretariat Jenderal
+                    </span>
+                    <h3 class="text-xl font-bold text-dark mb-2">Sekretaris Jenderal</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Mengoordinasikan tata kelola administrasi, kearsipan, dan operasional internal DEMA UNS.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid Komisi (3 Kolom) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <!-- Komisi 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-primary/40 transition">
+                    <span class="text-xs font-bold text-primary uppercase tracking-wider block mb-1">Komisi 1</span>
+                    <h4 class="text-lg font-bold text-dark mb-2">Legislasi</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Merancang, membahas, dan menetapkan produk hukum serta regulasi organisasi.
+                    </p>
+                </div>
+
+                <!-- Komisi 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-primary/40 transition">
+                    <span class="text-xs font-bold text-primary uppercase tracking-wider block mb-1">Komisi 2</span>
+                    <h4 class="text-lg font-bold text-dark mb-2">Aspirasi & Hubungan Kelembagaan</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Menyerap aspirasi mahasiswa dan membangun sinergi komunikasi antar-lembaga kemahasiswaan.
+                    </p>
+                </div>
+
+                <!-- Komisi 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-primary/40 transition">
+                    <span class="text-xs font-bold text-primary uppercase tracking-wider block mb-1">Komisi 3</span>
+                    <h4 class="text-lg font-bold text-dark mb-2">Pengawasan</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Mengawasi pelaksanaan kinerja program kerja lembaga eksekutif dan kebijakan kampus.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid Biro (2 Kolom Presisi di Tengah) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+                <!-- Biro BPO -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-primary/40 transition">
+                    <span class="text-xs font-bold text-primary uppercase tracking-wider block mb-1">Biro BPO</span>
+                    <h4 class="text-lg font-bold text-dark mb-2">Pengembangan Organisasi</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Menjaga keharmonisan internal dan meningkatkan kapasitas sumber daya anggota.
+                    </p>
+                </div>
+
+                <!-- Biro Administrasi & Kesekretariatan -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-primary/40 transition">
+                    <span class="text-xs font-bold text-primary uppercase tracking-wider block mb-1">Biro Internal</span>
+                    <h4 class="text-lg font-bold text-dark mb-2">Administrasi & Kesekretariatan</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Mengelola persuratan, arsip dokumen resmi, serta inventarisasi organisasi.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= END STRUKTUR ORGANISASI ================= -->
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-primary text-white pt-16 pb-8 border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-10 h-10 object-contain">
+                        <h3 class="text-xl font-bold tracking-wide">DEMA UNS</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Parlemen Berdikari 2026. Wadah aspirasi utama bagi seluruh mahasiswa Universitas Sebelas Maret untuk menjaga tata kelola kampus yang transparan.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="index.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Beranda</a></li>
+                        <li><a href="sakti.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> SAKTi</a></li>
+                        <li><a href="aktivitas.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Aktivitas</a></li>
+                        <li><a href="produk-hukum.html" class="hover:text-accent transition duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Produk Hukum</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Sekretariat</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        <strong>Gedung Graha Ormawa 1</strong><br>
+                        Lantai 2, Ruang DEMA UNS<br>
+                        Jl. Ir. Sutami No.36A, Kentingan, Jebres,<br>
+                        Surakarta, Jawa Tengah 57126
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-accent font-bold mb-4 uppercase tracking-wider text-sm">Media Sosial</h4>
+                    <p class="text-sm text-gray-300 mb-4">Ikuti perkembangan regulasi dan aktivitas kami.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/dema11maret/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition duration-300" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="mailto:dema@uns.ac.id" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition duration-300" aria-label="Email">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2026 DEMA UNS. Hak Cipta Dilindungi.</p>
+                <p class="mt-2 md:mt-0 font-medium">Dirancang untuk Parlemen Berdikari</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT LENGKAP -->
+    <script>
+        // 1. Script Hilangkan Splash Screen Otomatis
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                if (splash) {
+                    splash.classList.add('opacity-0', 'pointer-events-none');
+                    setTimeout(() => splash.remove(), 1000);
+                }
+            }, 1800);
+        });
+
+        // 2. Toggle Menu Mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        // 3. Efek Scroll Navbar Otomatis
+        let prevScrollpos = window.pageYOffset;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function () {
+            const current = window.pageYOffset;
+            if (!navbar) return;
+
+            if (prevScrollpos > current) {
+                navbar.classList.remove('-translate-y-28', 'opacity-0');
+            } else if (current > 80) {
+                navbar.classList.add('-translate-y-28', 'opacity-0');
+            }
+            prevScrollpos = current;
+        });
+
+        // 4. Fungsi Geser Carousel Berita Kiri/Kanan
+        function scrollNewsCarousel(direction) {
+            const carousel = document.getElementById('newsCarousel');
+            if (carousel) {
+                const scrollAmount = carousel.clientWidth * 0.8;
+                carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

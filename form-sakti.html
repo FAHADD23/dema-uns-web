@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pengaduan SAKTi | DEMA UNS 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Poppins', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        primary: '#7F011F', /* Wine Red */
+                        accent: '#F5EBD0',  /* Light Sand */
+                        dark: '#2d000a',    /* Hitam kemerahan gelap untuk teks utama */
+                        light: '#fdfbf7'    /* Krem sangat muda untuk background */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light min-h-screen py-10 px-4 flex justify-center items-center font-sans">
+
+    <!-- Container Form Utama -->
+    <div class="max-w-2xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 my-6">
+        
+        <!-- Header Form -->
+        <div class="bg-primary text-white p-8 text-center relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-accent opacity-10 rounded-full blur-xl"></div>
+            <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full p-2 shadow-lg flex items-center justify-center relative z-10">
+                <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-full h-full object-contain">
+            </div>
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Formulir Pengaduan SAKTi</h1>
+            <p class="text-accent text-xs md:text-sm mt-1 font-semibold tracking-wide">DEMA UNS 2026 • Parlemen Berdikari</p>
+        </div>
+
+        <!-- Banner Jaminan Kerahasiaan Data -->
+        <div class="bg-blue-50 border-l-4 border-primary p-4 mx-6 md:mx-8 mt-6 rounded-r-xl flex items-start gap-3">
+            <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+            <div>
+                <h4 class="text-xs font-bold text-primary uppercase tracking-wider">Jaminan Kerahasiaan 100%</h4>
+                <p class="text-xs text-gray-600 mt-0.5 leading-relaxed">
+                    Identitas pelapor (Nama, NIM, Fakultas, Nomor Telepon, & KTM) bersifat <strong>rahasia dan dilindungi sepenuhnya</strong> oleh DEMA UNS. Data ini hanya digunakan untuk verifikasi keabsahan mahasiswa UNS.
+                </p>
+            </div>
+        </div>
+
+        <!-- Isian Form -->
+        <form id="form-sakti" class="p-6 md:p-8 space-y-6">
+
+            <!-- Identitas Pelapor (Nama & NIM) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-primary mb-2">Nama Lengkap <span class="text-red-500">*</span></label>
+                    <input type="text" id="nama" placeholder="Masukkan nama sesuai KTM" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-accent bg-light" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-primary mb-2">NIM <span class="text-red-500">*</span></label>
+                    <input type="text" id="nim" placeholder="Contoh: I0725059" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-accent bg-light" required>
+                </div>
+            </div>
+
+            <!-- Fakultas & Kontak -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-primary mb-2">Fakultas / Sekolah <span class="text-red-500">*</span></label>
+                    <select id="fakultas" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-accent bg-light text-dark font-medium cursor-pointer" required>
+                        <option value="" disabled selected>-- Pilih Fakultas --</option>
+                        <option value="Fakultas Teknik">Fakultas Teknik (FT)</option>
+                        <option value="FKIP">Fakultas Keguruan & Ilmu Pendidikan (FKIP)</option>
+                        <option value="Fakultas Kedokteran">Fakultas Kedokteran (FK)</option>
+                        <option value="FEB">Fakultas Ekonomi & Bisnis (FEB)</option>
+                        <option value="FH">Fakultas Hukum (FH)</option>
+                        <option value="FISIP">Fakultas Ilmu Sosial & Politik (FISIP)</option>
+                        <option value="FIB">Fakultas Ilmu Budaya (FIB)</option>
+                        <option value="FP">Fakultas Pertanian (FP)</option>
+                        <option value="FMIPA">Fakultas MIPA (FMIPA)</option>
+                        <option value="FSRD">Fakultas Seni Rupa & Desain (FSRD)</option>
+                        <option value="FKOR">Fakultas Keolahragaan (FKOR)</option>
+                        <option value="SV">Sekolah Vokasi (SV)</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="kontak" class="block text-sm font-bold text-primary mb-2">Nomor WhatsApp / HP <span class="text-red-500">*</span></label>
+                    <input type="tel" id="kontak" name="kontak" required
+                        placeholder="Contoh: 081234567890" 
+                        maxlength="15"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-accent bg-light">
+                    <!-- Pesan Error Dinamis untuk Nomor WA -->
+                    <p id="error-kontak" class="text-xs text-red-600 font-semibold mt-1 hidden"></p>
+                </div>
+            </div>
+
+            <!-- Unggah KTM -->
+            <div>
+                <label class="block text-sm font-bold text-primary mb-2">Unggah Foto / Scan KTM <span class="text-red-500">*</span></label>
+                <div class="border-2 border-dashed border-gray-200 rounded-2xl p-4 bg-light text-center hover:border-accent transition">
+                    <input type="file" id="ktm" accept="image/*,.pdf" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-primary file:text-white hover:file:bg-accent hover:file:text-primary transition cursor-pointer" required>
+                    <p class="text-xs text-gray-400 mt-2">*Format: JPG, PNG, atau PDF (Maks. 2MB) untuk verifikasi identitas mahasiswa aktif.</p>
+                </div>
+            </div>
+
+            <!-- Jenis Pengajuan -->
+            <div>
+                <label class="block text-sm font-bold text-primary mb-2">Jenis Pengajuan <span class="text-red-500">*</span></label>
+                <select id="kategori" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-accent bg-light text-dark font-medium cursor-pointer" required>
+                    <option value="" disabled selected>-- Pilih Jenis Pengajuan --</option>
+                    <option value="Aspirasi">Aspirasi</option>
+                    <option value="Kritik & Saran">Kritik & Saran</option>
+                    <option value="Pengaduan">Pengaduan</option>
+                </select>
+            </div>
+
+            <!-- Nama Laporan -->
+            <div>
+                <label class="block text-sm font-bold text-primary mb-2">Nama Laporan / Pokok Masalah <span class="text-red-500">*</span></label>
+                <input type="text" id="judul" placeholder="Tuliskan ringkasan isu secara singkat" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-accent bg-light" required>
+            </div>
+
+            <!-- Detail Laporan -->
+            <div>
+                <label class="block text-sm font-bold text-primary mb-2">Detail Kronologi / Aspirasi <span class="text-red-500">*</span></label>
+                <textarea id="detail" rows="5" placeholder="Jelaskan permasalahan secara rinci, kronologi kejadian, dan tuntutan/harapan Anda..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-accent bg-light" required></textarea>
+            </div>
+
+            <!-- Link Tautan Bukti Pendukung Masalah -->
+            <div>
+                <label class="block text-sm font-bold text-primary mb-2">Link Bukti Pendukung Masalah (Opsional)</label>
+                <input type="url" id="link-bukti" placeholder="https://drive.google.com/..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-accent bg-light">
+                <p class="text-xs text-gray-400 mt-1">*Masukkan link foto/dokumen bukti masalah jika ada (Google Drive/Cloud).</p>
+            </div>
+
+            <!-- Tombol Kirim -->
+            <div class="pt-4">
+                <button type="submit" id="btn-submit" class="w-full bg-accent text-primary font-extrabold py-4 rounded-xl hover:bg-yellow-400 transition shadow-lg text-base flex justify-center items-center gap-2 cursor-pointer">
+                    <span>Kirim Laporan Pengaduan</span>
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Script Pengiriman Data SAKTi & Validasi Nomor WA -->
+    <script>
+        // URL Apps Script Deployment Terbaru
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxuBtLVv3Aw0WmGPyU1CHcpmRAcGGcnGKfqk--PNizZZPrOD7abtRwnggzpQv6lhzuj/exec";
+
+        const inputKontak = document.getElementById('kontak');
+        const errorKontak = document.getElementById('error-kontak');
+
+        // 1. Validasi Real-time: Hanya izinkan angka di kolom No WA
+        inputKontak.addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            errorKontak.classList.add('hidden');
+        });
+
+        document.getElementById('form-sakti').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const valKontak = inputKontak.value.trim();
+
+            // 2. Cek apakah nomor WA diawali "08"
+            if (!valKontak.startsWith('08')) {
+                errorKontak.textContent = 'Nomor WhatsApp harus diawali dengan "08" (contoh: 081234567890).';
+                errorKontak.classList.remove('hidden');
+                inputKontak.focus();
+                return;
+            }
+
+            // 3. Cek panjang minimal nomor WA (misal minimal 10 digit)
+            if (valKontak.length < 10) {
+                errorKontak.textContent = 'Nomor WhatsApp terlalu pendek (minimal 10 digit).';
+                errorKontak.classList.remove('hidden');
+                inputKontak.focus();
+                return;
+            }
+
+            const btnSubmit = document.getElementById('btn-submit');
+            const ktmInput = document.getElementById('ktm');
+            const file = ktmInput.files[0];
+
+            btnSubmit.disabled = true;
+            btnSubmit.innerText = "Memproses & Mengirim...";
+
+            // Ambil seluruh data teks
+            const formData = new URLSearchParams();
+            formData.append('nama', document.getElementById('nama').value);
+            formData.append('nim', document.getElementById('nim').value);
+            formData.append('fakultas', document.getElementById('fakultas').value);
+            formData.append('kontak', valKontak);
+            formData.append('kategori', document.getElementById('kategori').value);
+            formData.append('judul', document.getElementById('judul').value);
+            formData.append('detail', document.getElementById('detail').value);
+            
+            const linkBuktiElem = document.getElementById('link-bukti');
+            if(linkBuktiElem) {
+                formData.append('linkBukti', linkBuktiElem.value);
+            }
+
+            // Jika ada file KTM dipilih
+            if (file) {
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('Ukuran foto KTM terlalu besar! Maksimal 2MB.');
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerText = "Kirim Laporan Pengaduan";
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    const base64Data = evt.target.result.split(',')[1];
+                    formData.append('ktmBase64', base64Data);
+                    formData.append('ktmFileName', file.name);
+                    formData.append('ktmMimeType', file.type);
+
+                    prosesKirim(formData, btnSubmit);
+                };
+                reader.onerror = function() {
+                    prosesKirim(formData, btnSubmit);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                prosesKirim(formData, btnSubmit);
+            }
+        });
+
+        function prosesKirim(formData, btnSubmit) {
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formData.toString()
+            })
+            .then(() => {
+                alert('Laporan Anda berhasil dikirim! Anda akan dialihkan ke halaman Transparansi SAKTi.');
+                document.getElementById('form-sakti').reset();
+                window.location.href = 'sakti.html'; 
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan jaringan saat mengirim data. Silakan coba lagi.');
+                btnSubmit.disabled = false;
+                btnSubmit.innerText = "Kirim Laporan Pengaduan";
+            });
+        }
+    </script>
+</body>
+</html>
