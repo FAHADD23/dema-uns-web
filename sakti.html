@@ -33,20 +33,69 @@
 <body class="bg-light text-dark font-sans relative">
 
 <!-- NAVBAR DEMA UNS -->
-    <div id="navbar" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-auto transition-all duration-500 ease-in-out">
-        <nav class="bg-[#7F011F]/90 backdrop-blur-md border border-white/20 shadow-2xl rounded-full px-8 py-3.5 flex items-center gap-8 md:gap-10">
-            <a href="index.html" class="flex items-center shrink-0">
-                <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-10 h-10 object-contain">
-            </a>
+<div id="navbar" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-auto transition-all duration-500">
+    <nav class="bg-[#7F011F]/90 backdrop-blur-md border border-white/20 shadow-2xl rounded-full px-8 py-3.5 flex items-center justify-between gap-8 md:gap-10">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center shrink-0">
+            <img src="assets/logo-dema.png" alt="Logo DEMA UNS" class="w-10 h-10 object-contain">
+        </a>
 
-            <div class="flex items-center space-x-6 md:space-x-8 font-bold text-sm md:text-base text-white">
-                <a href="index.html" class="hover:text-accent transition duration-300 pb-1">Beranda</a>
-                <a href="sakti.html" class="text-accent border-b-2 border-accent pb-1 font-bold">SAKTi</a>
-                <a href="aktivitas.html" class="hover:text-accent transition duration-300 pb-1">Aktivitas</a>
-                <a href="produk-hukum.html" class="hover:text-accent transition duration-300 pb-1">Produk Hukum</a>
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex items-center space-x-6 md:space-x-8 font-bold text-sm md:text-base text-white">
+            <a href="index.html" class="hover:text-accent transition duration-300 pb-1">Beranda</a>
+            
+            <!-- DROPDOWN MENU ANGGOTA -->
+            <div class="relative group">
+                <button class="hover:text-accent transition duration-300 pb-1 font-bold flex items-center gap-1.5 focus:outline-none">
+                    <span>Anggota</span>
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                
+                <!-- Submenu Terpisah Per File -->
+                <div class="absolute left-0 mt-3 w-64 bg-[#7F011F] border border-white/20 rounded-2xl shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 overflow-hidden py-2 text-left">
+                    <a href="ketua-umum.html" class="block px-4 py-2.5 text-xs text-white hover:bg-white/10 hover:text-accent font-medium">Ketua Umum</a>
+                    <a href="sekjen.html" class="block px-4 py-2.5 text-xs text-white hover:bg-white/10 hover:text-accent font-medium">Sekretaris Jenderal</a>
+                    <a href="komisi-1.html" class="block px-4 py-2.5 text-xs text-white hover:bg-white/10 hover:text-accent font-medium">Komisi 1 (Legislasi)</a>
+                    <a href="komisi-2.html" class="block px-4 py-2.5 text-xs text-white hover:bg-white/10 hover:text-accent font-medium">Komisi 2 (Aspirasi & Kelembagaan)</a>
+                    <a href="komisi-3.html" class="block px-4 py-2.5 text-xs text-white hover:bg-white/10 hover:text-accent font-medium">Komisi 3 (Pengawasan)</a>
+                    <a href="biro-bpo.html" class="block px-4 py-2.5 text-xs text-white hover:bg-white/10 hover:text-accent font-medium">Biro BPO</a>
+                    <a href="biro-adkes.html" class="block px-4 py-2.5 text-xs text-white hover:bg-white/10 hover:text-accent font-medium">Biro Adkes</a>
+                </div>
             </div>
-        </nav>
+
+            <a href="sakti.html" class="hover:text-accent transition duration-300 pb-1">SAKTi</a>
+            <a href="aktivitas.html" class="hover:text-accent transition duration-300 pb-1">Aktivitas</a>
+            <a href="produk-hukum.html" class="hover:text-accent transition duration-300 pb-1">Produk Hukum</a>
+        </div>
+
+        <!-- Tombol Mobile -->
+        <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-accent p-1 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Dropdown Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-3 bg-[#7F011F]/95 backdrop-blur-2xl border border-white/20 rounded-3xl p-5 shadow-2xl flex flex-col gap-2 text-white text-center font-medium">
+        <a href="index.html" class="py-2 rounded-xl hover:bg-white/10">Beranda</a>
+        
+        <div class="py-2 text-accent font-bold border-b border-t border-white/10 my-1">-- Anggota Parlemen --</div>
+        <a href="ketua-umum.html" class="py-1 text-xs text-gray-200 hover:text-accent">Ketua Umum</a>
+        <a href="sekjen.html" class="py-1 text-xs text-gray-200 hover:text-accent">Sekretaris Jenderal</a>
+        <a href="komisi-1.html" class="py-1 text-xs text-gray-200 hover:text-accent">Komisi 1 (Legislasi)</a>
+        <a href="komisi-2.html" class="py-1 text-xs text-gray-200 hover:text-accent">Komisi 2 (Aspirasi & Kelembagaan)</a>
+        <a href="komisi-3.html" class="py-1 text-xs text-gray-200 hover:text-accent">Komisi 3 (Pengawasan)</a>
+        <a href="biro-bpo.html" class="py-1 text-xs text-gray-200 hover:text-accent">Biro BPO</a>
+        <a href="biro-adkes.html" class="py-1 text-xs text-gray-200 hover:text-accent">Biro Adkes</a>
+        
+        <a href="sakti.html" class="py-2 rounded-xl hover:bg-white/10 mt-2">SAKTi</a>
+        <a href="aktivitas.html" class="py-2 rounded-xl hover:bg-white/10">Aktivitas</a>
+        <a href="produk-hukum.html" class="py-2 rounded-xl hover:bg-white/10">Produk Hukum</a>
     </div>
+</div>
 
     <!-- ================= HERO SECTION SAKTI (SERAGAM DENGAN AKTIVITAS) ================= -->
     <section class="relative min-h-[85vh] bg-[#1a0005] text-white flex items-center justify-center pt-36 pb-20 overflow-hidden">
