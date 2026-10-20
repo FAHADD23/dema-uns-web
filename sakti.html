@@ -88,7 +88,7 @@
         <a href="komisi-1.html" class="py-1 text-xs text-gray-200 hover:text-accent">Komisi 1 (Legislasi)</a>
         <a href="komisi-2.html" class="py-1 text-xs text-gray-200 hover:text-accent">Komisi 2 (Aspirasi & Kelembagaan)</a>
         <a href="komisi-3.html" class="py-1 text-xs text-gray-200 hover:text-accent">Komisi 3 (Pengawasan)</a>
-        <a href="biro-bpo.html" class="py-1 text-xs text-gray-200 hover:text-accent">Biro BPO</a>
+        <a href="biro-po.html" class="py-1 text-xs text-gray-200 hover:text-accent">Biro PO</a>
         <a href="biro-adkes.html" class="py-1 text-xs text-gray-200 hover:text-accent">Biro Adkes</a>
         
         <a href="sakti.html" class="py-2 rounded-xl hover:bg-white/10 mt-2">SAKTi</a>
@@ -97,7 +97,7 @@
     </div>
 </div>
 
-    <!-- ================= HERO SECTION SAKTI (SERAGAM DENGAN AKTIVITAS) ================= -->
+    <!-- ================= HERO SECTION SAKTI ================= -->
     <section class="relative min-h-[85vh] bg-[#1a0005] text-white flex items-center justify-center pt-36 pb-20 overflow-hidden">
         
         <!-- Ambient Light Background -->
@@ -135,7 +135,7 @@
                 </a>
             </div>
 
-            <!-- 3 Kartu Poin Keunggulan (Menyeragamkan Tampilan Bawah) -->
+            <!-- 3 Kartu Poin Keunggulan -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-3xl pt-8 border-t border-white/10">
                 <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-accent/40 transition">
                     <p class="text-accent font-bold text-base">Rahasia & Aman</p>
@@ -209,7 +209,7 @@
                 <p class="text-gray-600 text-sm">Pantau statistik ringkas dan status pengawalan isu mahasiswa secara terbuka.</p>
             </div>
 
-            <!-- DASHBOARD STATISTIK SAKTI (Sejajar dengan Tabel) -->
+            <!-- DASHBOARD STATISTIK SAKTI -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 <!-- Kotak 1: Total Laporan -->
                 <div class="bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1">
@@ -246,7 +246,7 @@
                     <select id="select-status" class="w-full sm:w-auto px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-accent shadow-sm text-gray-600 font-medium cursor-pointer">
                         <option value="semua">Semua Status</option>
                         <option value="Selesai">Selesai</option>
-                        <option value="Proses Audiensi">Proses Audiensi</option>
+                        <option value="Proses">Proses</option>
                         <option value="Verifikasi Admin">Verifikasi Admin</option>
                     </select>
                 </div>
@@ -382,9 +382,9 @@
         let globalDataLaporan = [];
 
         function getWarnaJenis(jenis) {
-            if (jenis === 'Aspirasi') return 'bg-blue-100 text-primary border border-blue-200';
-            if (jenis === 'Pengaduan') return 'bg-rose-100 text-rose-700 border border-rose-200';
-            if (jenis === 'Kritik & Saran') return 'bg-purple-100 text-purple-700 border border-purple-200';
+            if (jenis === 'Akademik') return 'bg-blue-100 text-primary border border-blue-200';
+            if (jenis === 'Fasilitas') return 'bg-rose-100 text-rose-700 border border-rose-200';
+            if (jenis === 'Laporan Umum') return 'bg-purple-100 text-purple-700 border border-purple-200';
             return 'bg-gray-100 text-gray-700 border border-gray-200';
         }
 
@@ -404,7 +404,7 @@
             statusBadge.innerText = item.status;
             if(item.status === 'Selesai') {
                 statusBadge.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 border border-emerald-200';
-            } else if(item.status.includes('Proses') || item.status.includes('Audiensi')) {
+            } else if(item.status === 'Proses') {
                 statusBadge.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-700 border border-amber-200 animate-pulse';
             } else {
                 statusBadge.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-100 text-blue-700 border border-blue-200';
@@ -485,7 +485,7 @@
                         return;
                     }
 
-                    // --- PERHITUNGAN STATISTIK OTOMATIS (Tanpa Duplikasi) ---
+                    // --- PERHITUNGAN STATISTIK OTOMATIS ---
                     let totalLaporan = data.length;
                     let jumlahSelesai = 0;
                     let jumlahProses = 0;
@@ -519,7 +519,7 @@
                         if(statusText === 'Selesai') {
                             statusColor = 'bg-emerald-100 text-emerald-700';
                             dotColor = 'bg-emerald-500';
-                        } else if(statusText.includes('Proses') || statusText.includes('Audiensi')) {
+                        } else if(statusText === 'Proses') {
                             statusColor = 'bg-amber-100 text-amber-700';
                             dotColor = 'bg-amber-500 animate-pulse';
                         }
@@ -560,6 +560,12 @@
         inputSearch.addEventListener('keyup', filterTabel);
         selectStatus.addEventListener('change', filterTabel);
         document.addEventListener('DOMContentLoaded', loadData);
+
+        // Fungsi Toggle Menu Mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
+        }
     </script>
     <script>
         // Efek Scroll Navbar Otomatis
@@ -578,5 +584,56 @@
             prevScrollpos = current;
         });
     </script>
+
+<!-- FLOATING CONTACT PERSON WHATSAPP -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end group">
+    <!-- Pop-up Kartu Kontak (Muncul saat hover / diklik) -->
+    <div class="hidden group-hover:flex flex-col gap-3 bg-[#7F011F]/95 backdrop-blur-xl border border-white/20 p-4 rounded-3xl shadow-2xl mb-3 w-72 text-white animate-fade-in transition-all">
+        <div class="border-b border-white/10 pb-2 flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-accent">Pusat Bantuan DEMA</span>
+            <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+        </div>
+        <p class="text-[11px] text-gray-200 leading-snug">Ada pertanyaan atau kendala? Hubungi tim admin kami via WhatsApp:</p>
+        
+        <!-- CP 1: Jasmine -->
+        <a href="https://wa.me/6283136037431?text=Halo%20Jasmine,%20saya%20ingin%20bertanya%20seputar%20DEMA%20UNS" target="_blank" class="flex items-center justify-between bg-white/10 hover:bg-white/20 border border-white/10 p-2.5 rounded-2xl transition duration-300">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent text-xs">J</div>
+                <div class="text-left">
+                    <h5 class="text-xs font-bold text-white">Jasmine</h5>
+                    <p class="text-[10px] text-gray-300">Contact Person 1</p>
+                </div>
+            </div>
+            <span class="bg-green-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                Chat 💬
+            </span>
+        </a>
+
+        <!-- CP 2: Naufal -->
+        <a href="https://wa.me/6285282821923?text=Halo%20Naufal,%20saya%20ingin%20bertanya%20seputar%20DEMA%20UNS" target="_blank" class="flex items-center justify-between bg-white/10 hover:bg-white/20 border border-white/10 p-2.5 rounded-2xl transition duration-300">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent text-xs">N</div>
+                <div class="text-left">
+                    <h5 class="text-xs font-bold text-white">Naufal</h5>
+                    <p class="text-[10px] text-gray-300">Contact Person 2</p>
+                </div>
+            </div>
+            <span class="bg-green-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                Chat 💬
+            </span>
+        </a>
+    </div>
+
+    <!-- Tombol Utama Melayang -->
+    <button class="bg-[#7F011F] hover:bg-dark border-2 border-accent text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
+        <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+        <span class="text-xs font-bold pr-1 hidden sm:inline">Hubungi Kami</span>
+    </button>
+</div>
 </body>
 </html>
